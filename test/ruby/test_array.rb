@@ -2990,8 +2990,8 @@ class TestArray < Test::Unit::TestCase
   end
 end
 
-class Array
-  def compact
-    self
-  end
-end
+# class Array
+#   def compact
+#     self
+#   end
+# end
