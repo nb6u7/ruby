@@ -3150,6 +3150,10 @@ CODE
     assert_not_predicate(data, :valid_encoding?)
     assert_predicate(data[100..-1], :valid_encoding?)
   end
+
+  def test_failed_concat
+    assert_equal('aa' + 'bb', 'aabb')
+  end
 end
 
 class TestString2 < TestString
