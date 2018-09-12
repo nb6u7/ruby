@@ -12769,6 +12769,14 @@ rb_readwrite_syserr_fail(enum rb_io_wait_readwrite writable, int n, const char *
     }
 }
 
+static VALUE
+f_hello(VALUE self, VALUE name)
+{
+    const char *name_ptr = RSTRING_PTR(name);
+    fprintf(stdout, "Hello %s\n", name_ptr);
+    return Qnil;
+}
+
 /*
  * Document-class: IOError
  *
@@ -12971,6 +12979,8 @@ Init_IO(void)
 
     rb_define_global_function("p", rb_f_p, -1);
     rb_define_method(rb_mKernel, "display", rb_obj_display, -1);
+
+    rb_define_global_function("hello", f_hello, 1);
 
     rb_cIO = rb_define_class("IO", rb_cObject);
     rb_include_module(rb_cIO, rb_mEnumerable);

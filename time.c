@@ -4754,7 +4754,7 @@ time_load(VALUE klass, VALUE str)
 }
 
 static VALUE
-time_day_before(int argc, VALUE *agrv, VALUE self)
+time_day_before(int argc, VALUE *argv, VALUE self)
 {
     VALUE nth;
     int n, sec, day_before_sec;
@@ -4952,7 +4952,7 @@ Init_Time(void)
     rb_define_method(rb_cTime, "subsec", time_subsec, 0);
 
     rb_define_method(rb_cTime, "strftime", time_strftime, 1);
-    
+
     rb_define_method(rb_cTime, "day_before", time_day_before, -1);
 
     /* methods for marshaling */
