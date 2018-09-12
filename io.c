@@ -12772,7 +12772,7 @@ rb_readwrite_syserr_fail(enum rb_io_wait_readwrite writable, int n, const char *
 static VALUE
 f_hello(VALUE self, VALUE name)
 {
-    const char *name_ptr = RSTRING_PTR(name);
+    const char *name_ptr = StringValueCStr(name);
     fprintf(stdout, "Hello %s\n", name_ptr);
     return Qnil;
 }
