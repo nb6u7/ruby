@@ -239,7 +239,8 @@ ruby_qsort(void* base, const size_t nel, const size_t size, cmpfunc_t *cmp, void
     struct bsd_qsort_r_args args;
     args.cmp = cmp;
     args.arg = d;
-    qsort_r(base, nel, size, &args, cmp_bsd_qsort);
+    // qsort_r(base, nel, size, &args, cmp_bsd_qsort);
+    mergesort(base, nel, size, cmp_bsd_qsort);
 }
 #elif !defined HAVE_GNU_QSORT_R
 /* mm.c */
